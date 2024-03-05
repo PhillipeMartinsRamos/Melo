@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 115px 55px 115px;
+}
+
+.first-group{
+    display: flex;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+
+.logo img{
+    width: 80px;
+}
