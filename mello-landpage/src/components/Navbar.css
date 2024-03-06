@@ -2,7 +2,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 55px 115px 55px 115px;
+    margin: 50px 115px 50px 115px;
 }
 
 .first-group{

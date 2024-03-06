@@ -1,0 +1,38 @@
+@keyframes video-frame {
+    0%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes video-container{
+    0%{
+        transform: rotate(-2deg);
+    }
+}
+
+.video-container{
+    position: relative;
+    width: 990px;
+    height: 556px;
+    animation: video-container 1s ease;
+}
+
+
+
+.video-frame{
+    box-sizing: border-box;
+    border: solid 10px #DDA108;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 990px;
+    height: 556px;
+    position: absolute;
+    transform: rotate(-4deg);
+    animation: video-frame 1s ease;
+}
+
+.video-container video{
+    border-radius: 15px;
+    width: 990px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
