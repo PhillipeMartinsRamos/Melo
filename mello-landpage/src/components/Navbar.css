@@ -2,7 +2,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 50px 115px 50px 115px;
+    margin-bottom: 50px;
+    padding: 0 113px;
+    height: 240px;
 }
 
 .first-group{
