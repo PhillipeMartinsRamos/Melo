@@ -49,8 +49,7 @@ const Video = ({ bannerTextElement }) => {
       >
         Play
       </button>
-      <button onClick={() => videoElement.current.pause()}>Pause</button>
-      <button></button>
+      {/* <button onClick={() => videoElement.current.pause()}>Pause</button> */}
     </div>
   );
 };
