@@ -3,13 +3,15 @@ import video from "../assets/video.mp4";
 import frame from "../assets/frame.jpg";
 import { useEffect, useRef } from "react";
 
-const Video = ({bannerTextElement}) => {
+const Video = ({ bannerTextElement }) => {
   const videoFrameElement = useRef();
   const videoElement = useRef();
   const btnContato = useRef();
 
   function handleVideoEnded() {
-    btnContato.current.classList.add("visivel");
+    if (videoElement.current.muted == false) {
+      btnContato.current.classList.add("visivel");
+    }
   }
 
   useEffect(() => {
@@ -26,7 +28,10 @@ const Video = ({bannerTextElement}) => {
         autoPlay
         muted={true}
         poster={frame}
-        onClick={() => bannerTextElement.current.classList.add("banner-text-invisible")}
+        onClick={() =>
+          bannerTextElement.current.classList.add("banner-text-invisible")
+        }
+        loop
       ></video>
 
       <div className="btn-contato" ref={btnContato}>
@@ -35,8 +40,10 @@ const Video = ({bannerTextElement}) => {
 
       <button
         onClick={() => {
-          videoElement.current.load()
-          videoElement.current.muted = false
+          videoElement.current.load();
+
+          videoElement.current.loop = false;
+          videoElement.current.muted = false;
           videoElement.current.play();
         }}
       >
