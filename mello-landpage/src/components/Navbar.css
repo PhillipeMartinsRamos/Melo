@@ -1,9 +1,11 @@
+@import "./variables.css";
+
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 113px;
-    height: 240px;
+    height: 200px;
     font-weight: 800;
 }
 
@@ -41,7 +43,7 @@ nav ul a:hover{
     font-weight: 600;
     padding: 8px 16px;
     border-radius: 5px;
-    background-color: #FFC700;
+    background-color: var(--primary-color);
     border: none;
     text-transform: lowercase;
     font-size: 17px;
