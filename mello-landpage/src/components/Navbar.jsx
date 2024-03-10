@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import logo from "../assets/LogoD.png";
+import logo from "../assets/LogoMeloWOName.png";
 
 const Navbar = () => {
   return (
@@ -7,6 +7,7 @@ const Navbar = () => {
       <div className="first-group">
         <h1 className="logo">
           <img src={logo} alt="" />
+          Dgran Melo
         </h1>
         <nav>
           <ul>
