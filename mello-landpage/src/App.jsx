@@ -1,4 +1,5 @@
 import './App.css'
+import AdLine from './components/AdLine'
 import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 
@@ -8,6 +9,7 @@ function App() {
     <>
     <Navbar/>
     <Banner />
+    <AdLine />
     </>
   )
 }

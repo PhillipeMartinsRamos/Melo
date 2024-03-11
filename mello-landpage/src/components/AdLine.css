@@ -1,0 +1,9 @@
+.ad-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ad-line li {
+    list-style: none;
+}
