@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 const Video = ({ bannerTextElement }) => {
   const videoFrameElement = useRef();
   const videoElement = useRef();
+  const videoContainerElement = useRef();
   const btnContato = useRef();
 
   function handleVideoEnded() {
@@ -19,7 +20,7 @@ const Video = ({ bannerTextElement }) => {
   }, []);
 
   return (
-    <div className="video-container">
+    <div className="video-container" ref={videoContainerElement}>
       {/* <div className="video-frame"></div> */}
       <video
         src={video}
@@ -28,9 +29,18 @@ const Video = ({ bannerTextElement }) => {
         autoPlay
         muted={true}
         poster={frame}
-        onClick={() =>
-          bannerTextElement.current.classList.add("banner-text-invisible")
-        }
+        onClick={() => {
+          //Adiciona as classes que modificam tamanhos de posicoes do elementos
+          bannerTextElement.current.classList.add("banner-text-hide")
+          videoContainerElement.current.classList.add("video-container-grow")
+
+          //executa comandos no video
+          videoElement.current.load();
+          videoElement.current.loop = false;
+          videoElement.current.muted = false;
+          videoElement.current.play();
+          videoElement.current.controls = "controls"
+        }}
         loop
       ></video>
 
@@ -38,17 +48,6 @@ const Video = ({ bannerTextElement }) => {
         Clique aqui para entrar em contato
       </div>
 
-      <button
-        onClick={() => {
-          videoElement.current.load();
-
-          videoElement.current.loop = false;
-          videoElement.current.muted = false;
-          videoElement.current.play();
-        }}
-      >
-        Play
-      </button>
       {/* <button onClick={() => videoElement.current.pause()}>Pause</button> */}
     </div>
   );
