@@ -6,7 +6,7 @@
     }
 
 
-    75%{
+    25%{
         transform: translateX(-600px);
     }
 }
@@ -22,7 +22,7 @@
 }
 
 .banner-text{
-    animation: anim_start-banner-text 2s ease;
+    animation: anim_start-banner-text 1s ease;
     padding: 15px;
     padding-right: 50px;
     position: absolute;
