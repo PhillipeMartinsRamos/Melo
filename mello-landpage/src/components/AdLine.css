@@ -7,4 +7,10 @@
 
 .ad-line li {
     list-style: none;
+    transition: all 1s ease;
+}
+
+.ad-line li:hover{
+    transform: translateY(-15px);
+    transition: all 1s ease;
 }

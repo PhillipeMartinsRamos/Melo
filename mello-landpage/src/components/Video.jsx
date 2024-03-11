@@ -2,11 +2,10 @@ import "./Video.css";
 import video from "../assets/video.mp4";
 import frame from "../assets/frame.jpg";
 import { useEffect, useRef, useState } from "react";
-import { GoXCircleFill, GoPlay } from "react-icons/go";
+import { FaPlay, FaRegTimesCircle, FaWhatsapp } from "react-icons/fa";
 
 const Video = ({ bannerTextElement }) => {
-
-const[videoExpanded, setVideoExpanded] = useState(false)
+  const [videoExpanded, setVideoExpanded] = useState(false);
 
   const videoFrameElement = useRef();
   const videoElement = useRef();
@@ -15,7 +14,7 @@ const[videoExpanded, setVideoExpanded] = useState(false)
 
   function handleVideoEnded() {
     if (videoElement.current.muted == false) {
-      btnContato.current.classList.add("visivel");
+      btnContato.current.classList.add("btn-whatsapp-visivel");
     }
   }
 
@@ -26,7 +25,7 @@ const[videoExpanded, setVideoExpanded] = useState(false)
     videoElement.current.classList.remove("gray-scale");
 
     //Habilita botao de fechar video
-    setVideoExpanded(true)
+    setVideoExpanded(true);
 
     //executa comandos no video
     videoElement.current.load();
@@ -43,7 +42,7 @@ const[videoExpanded, setVideoExpanded] = useState(false)
     videoElement.current.classList.add("gray-scale");
 
     //Habilita botao de fechar video
-    setVideoExpanded(false)
+    setVideoExpanded(false);
 
     //executa comandos no video
     videoElement.current.loop = true;
@@ -57,23 +56,31 @@ const[videoExpanded, setVideoExpanded] = useState(false)
 
   return (
     <div className="video-container" ref={videoContainerElement}>
-      {/* <div className="video-frame"></div> */} 
+      {/* <div className="video-frame"></div> */}
       <video
-      className="gray-scale"
+        className="gray-scale"
         src={video}
-        controlsList="nodownload nofullscreen"
+        controlsList="nodownload"
         ref={videoElement}
         autoPlay
         muted={true}
         poster={frame}
-        onClick={handleExpandVideo}
         loop
       ></video>
-      {videoExpanded && <GoXCircleFill className="btn-fechar-video" onClick={handleCloseVideo} />}
-      <GoPlay className="btn-play"/>
-      <div className="btn-contato" ref={btnContato}>2
-        Clique aqui para entrar em contato
-      </div>
+      {videoExpanded && (
+        <FaRegTimesCircle
+          className="btn-fechar-video"
+          onClick={handleCloseVideo}
+        />
+      )}
+      {!videoExpanded && (
+        <FaPlay className="btn-play" onClick={handleExpandVideo} />
+      )}
+
+      <button className="btn-whatsapp" ref={btnContato}>
+        <FaWhatsapp className="btn-whatsapp-icon" />
+        <p>Clique aqui para falar conosco</p>
+      </button>
 
       {/* <button onClick={() => videoElement.current.pause()}>Pause</button> */}
     </div>
