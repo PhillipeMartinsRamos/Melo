@@ -1,0 +1,27 @@
+.solucoes{
+    display: flex;
+    justify-content: space-between;
+    height: 310px;
+    align-items: center;
+    margin: 0 115px;
+}
+
+.solucoes div{
+    width: 640px;
+}
+
+.solucoes img{
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    height: 310px;
+    width: auto;
+}
+
+.solucoes h2{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.solucoes p{
+    font-size: 32px;
+}

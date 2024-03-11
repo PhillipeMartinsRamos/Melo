@@ -1,63 +1,100 @@
 @import "./variables.css";
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 113px;
-    height: 200px;
-    font-weight: 800;
+@keyframes anim_hover-logo {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
 }
 
-.logo{
-    display: flex;
-    align-items: center;
+@keyframes anim_start-logo_p{
+    0%{
+        transform: translateX(-200px);
+    }
 }
 
-.first-group{
-    display: flex;
-    align-items: center;
-    gap: 130px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 113px;
+  height: 200px;
+  font-weight: 800;
 }
 
-nav ul{
-    display: flex;
-    list-style: none;
+.logo {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo img {
+    width: 80px;
+    transition: all 0.3s ease;
+  }
+
+.logo img:hover {
+  animation-name: anim_hover-logo;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: all 0.3s ease;
+}
+
+.logo div{
+    overflow: hidden;
+}
+
+.logo p{
+    animation: anim_start-logo_p 1s ease;
+
+}
+
+.first-group {
+  display: flex;
+  align-items: center;
+  gap: 130px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
 nav ul a {
-    padding: 7px 8px;
-    text-decoration: none;
-    color: #000;
+  padding: 7px 8px;
+  text-decoration: none;
+  color: #000;
 }
 
-nav ul a:hover{
-    background-color: #000;
-    color: #fff;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    cursor: pointer;
+nav ul a:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 
-.logo img{
-    width: 80px;
+
+.second-group button {
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  border: none;
+  text-transform: lowercase;
+  font-size: 17px;
+  transition: all 0.2s ease;
+  /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); */
 }
 
-.second-group button{
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    border: none;
-    text-transform: lowercase;
-    font-size: 17px;
-    transition: all 0.2s ease;
-    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); */
-}
-
-.second-group button:hover{
-     transform: scale(105%);
-     transition: all 0.2s ease;
-     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+.second-group button:hover {
+  transform: scale(105%);
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }

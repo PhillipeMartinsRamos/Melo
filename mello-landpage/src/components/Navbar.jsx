@@ -7,12 +7,14 @@ const Navbar = () => {
       <div className="first-group">
         <h1 className="logo">
           <img src={logo} alt="" />
-          Dgran Melo
+          <div>
+          <p>Dgran Melo</p>
+          </div>
         </h1>
         <nav>
           <ul>
             <li><a href="">Home</a></li>
-            <li><a href="#banner">Soluções</a></li>
+            <li><a href="#solucoes">Soluções</a></li>
             <li><a href="">Sobre</a></li>
           </ul>
         </nav>
