@@ -1,4 +1,4 @@
 <h1>DGran Melo - Landing Page</h1>
 
-#installing dependences
+#installing dependences#
 npm install react-icons
