@@ -59,14 +59,15 @@ const Video = ({ bannerTextElement }) => {
       {/* <div className="video-frame"></div> */}
       <video
         className="gray-scale"
-        src={video}
         controlsList="nodownload"
         ref={videoElement}
         autoPlay
         muted={true}
         poster={frame}
         loop
-      ></video>
+      >
+        <source src={video}/>
+      </video>
       {videoExpanded && (
         <FaRegTimesCircle
           className="btn-fechar-video"
