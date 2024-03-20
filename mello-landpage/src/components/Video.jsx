@@ -65,6 +65,7 @@ const Video = ({ bannerTextElement }) => {
         muted={true}
         poster={frame}
         loop
+        playsInline
       >
         <source src={video}/>
       </video>
