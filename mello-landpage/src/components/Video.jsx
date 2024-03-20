@@ -66,6 +66,7 @@ const Video = ({ bannerTextElement }) => {
         poster={frame}
         loop
         playsInline
+        preload="auto"
       >
         <source src={video}/>
       </video>
